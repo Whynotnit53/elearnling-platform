@@ -71,7 +71,7 @@ class Reaction(models.Model):
         ]
         constraints = [
             models.CheckConstraint(
-                check=models.Q(discussion__isnull=False) | models.Q(comment__isnull=False),
+                condition=models.Q(discussion__isnull=False) | models.Q(comment__isnull=False),
                 name='reaction_has_target'
             ),
         ]
